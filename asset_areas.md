@@ -1,0 +1,53 @@
+Asset Areas
+ - Headress
+   - baseball cap
+   - fedora
+   - cowboy hat
+   - motorcycle helmut
+   - tiara
+   - mullet
+   - tricorner
+ - Suit
+   - tshirt and jeans
+   - tracksuit
+   - chainmail
+   - tux with tails
+   - business power skirt-suit
+   - cafe racer motorcycle suit
+   - anime battle suit
+   - princess peach dress
+   - racoon suit from mario
+ - Shoes
+   - converse
+   - motorcycle boots
+   - cowboy boots
+   - sandles, leather roman style
+   - moon boots
+   - heels
+   - dress shoes
+ - Hand-items
+   - orb of destiny
+   - wand
+   - the book of wisdom/spells
+   - ring
+   - corsage
+   - kitchen sink
+   - saxaphone
+ - Pet (pet threshold upon outline approval)
+   - Types of Pet
+     - canary
+	   - eagle
+     - cat
+	   - tiger
+	 - dog
+	   - wolf
+	 - snake
+	   - anaconda
+	 - ferret
+	   - dragon
+	 - kangaroo
+       - boxing kangaroo
+	   
+ 375 points
+  - 5 to 100 points each
+  

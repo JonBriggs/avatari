@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  target_area_id: 1
+  gender: MyString
+  value: 1.5
+  image_url: MyString
+  minecraft_image_url: MyString
+  description: MyText
+
+two:
+  name: MyString
+  target_area_id: 1
+  gender: MyString
+  value: 1.5
+  image_url: MyString
+  minecraft_image_url: MyString
+  description: MyText

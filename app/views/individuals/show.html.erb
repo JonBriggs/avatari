@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Firstname:</b>
+  <%= @individual.firstname %>
+</p>
+
+<p>
+  <b>Lastname:</b>
+  <%= @individual.lastname %>
+</p>
+
+<p>
+  <b>Canvas:</b>
+  <%= @individual.canvas_id %>
+</p>
+
+<p>
+  <b>Sisid:</b>
+  <%= @individual.sisid %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @individual.email %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @individual.type %>
+</p>
+
+<p>
+  <b>Gradyear:</b>
+  <%= @individual.gradyear %>
+</p>
+
+
+<%= link_to 'Edit', edit_individual_path(@individual) %> |
+<%= link_to 'Back', individuals_path %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @item.name %>
+</p>
+
+<p>
+  <b>Target area:</b>
+  <%= @item.target_area.name%>
+</p>
+
+<p>
+  <b>Gender:</b>
+  <%= @item.gender %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @item.value %>
+</p>
+
+<p>
+  <b>Image url:</b>
+  <%= @item.image_url %>
+</p>
+
+<p>
+  <b>Minecraft image url:</b>
+  <%= @item.minecraft_image_url %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @item.description %>
+</p>
+
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

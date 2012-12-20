@@ -1,0 +1,27 @@
+<h1>Listing owned_items</h1>
+
+<table>
+  <tr>
+    <th>Individual</th>
+    <th>Item</th>
+    <th>Stats</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @owned_items.each do |owned_item| %>
+  <tr>
+    <td><%= owned_item.individual_id %></td>
+    <td><%= owned_item.item_id %></td>
+    <td><%= owned_item.stats %></td>
+    <td><%= link_to 'Show', owned_item %></td>
+    <td><%= link_to 'Edit', edit_owned_item_path(owned_item) %></td>
+    <td><%= link_to 'Destroy', owned_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Owned item', new_owned_item_path %>

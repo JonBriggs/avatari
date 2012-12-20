@@ -1,0 +1,35 @@
+<h1>Listing individuals</h1>
+
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Canvas</th>
+    <th>Sisid</th>
+    <th>Email</th>
+    <th>Type</th>
+    <th>Gradyear</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @individuals.each do |individual| %>
+  <tr>
+    <td><%= individual.firstname %></td>
+    <td><%= individual.lastname %></td>
+    <td><%= individual.canvas_id %></td>
+    <td><%= individual.sisid %></td>
+    <td><%= individual.email %></td>
+    <td><%= individual.type %></td>
+    <td><%= individual.gradyear %></td>
+    <td><%= link_to 'Show', individual %></td>
+    <td><%= link_to 'Edit', edit_individual_path(individual) %></td>
+    <td><%= link_to 'Destroy', individual, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Individual', new_individual_path %>

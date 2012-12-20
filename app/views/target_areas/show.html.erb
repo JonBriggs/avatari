@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @target_area.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @target_area.description %>
+</p>
+<ul>
+  <% @target_area.items.each do |item| %>
+    <li><%=item.name%> - $<%=item.value%></li>
+  <% end %>
+</ul>
+<%= link_to 'Edit', edit_target_area_path(@target_area) %> |
+<%= link_to 'Back', target_areas_path %>
