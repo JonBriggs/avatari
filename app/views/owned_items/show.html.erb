@@ -2,19 +2,21 @@
 
 <p>
   <b>Individual:</b>
-  <%= @owned_item.individual_id %>
+  <%= @owned_item.individual.firstname %> <%= @owned_item.individual.lastname %>
 </p>
 
 <p>
   <b>Item:</b>
-  <%= @owned_item.item_id %>
+  <%= @owned_item.item.target_area.name %> - <%= @owned_item.item.name %>
 </p>
 
 <p>
   <b>Stats:</b>
   <%= @owned_item.stats %>
 </p>
-
+<svg height='150' width = '150'>
+  <%= render @owned_item.item %>
+</svg>
 
 <%= link_to 'Edit', edit_owned_item_path(@owned_item) %> |
 <%= link_to 'Back', owned_items_path %>

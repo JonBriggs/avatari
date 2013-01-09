@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121220233546) do
+ActiveRecord::Schema.define(:version => 20130109081305) do
 
   create_table "individuals", :force => true do |t|
     t.string   "firstname"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20121220233546) do
     t.text     "description"
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
+    t.text     "svg"
   end
 
   create_table "owned_items", :force => true do |t|
@@ -43,6 +44,8 @@ ActiveRecord::Schema.define(:version => 20121220233546) do
     t.string   "stats"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.boolean  "wearing"
+    t.string   "color"
   end
 
   create_table "target_areas", :force => true do |t|

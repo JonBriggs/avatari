@@ -34,7 +34,7 @@
   <b>Gradyear:</b>
   <%= @individual.gradyear %>
 </p>
-
+<%= render :partial => "svg_avatar", :individual => @individual %>
 
 <%= link_to 'Edit', edit_individual_path(@individual) %> |
 <%= link_to 'Back', individuals_path %>
