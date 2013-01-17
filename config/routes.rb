@@ -1,4 +1,12 @@
 Avatari::Application.routes.draw do
+  get "dashboard/index"
+
+  post "lti/connect"
+
+  get "lti/dashboard"
+
+  get "lti/tool_config"
+
   resources :owned_items
 
   resources :individuals
