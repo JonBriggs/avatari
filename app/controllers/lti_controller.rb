@@ -48,13 +48,15 @@ class LtiController < ApplicationController
         message += " found by canvas key "  
         unless @individual
           @individual = Individual.find_by_email params["lis_person_contact_email_primary"]
-          @individual.canvas_id = params["custom_canvas_user_id"]
-          @individual.save
-          message += " found by email and added canvas_id "
+          if @individual
+            @individual.canvas_id = params["custom_canvas_user_id"]
+            @individual.save
+            message += " found by email and added canvas_id "
+          end
         end
       end
       unless @individual
-        Individual.create(:firstname => params["lis_person_name_given"],
+        @individual = Individual.create(:firstname => params["lis_person_name_given"],
                           :lastname => params["lis_person_name_family"],
                           :canvas_id => params["custom_canvas_user_id"],
                           :sisid => params["lis_person_sourcedid"],

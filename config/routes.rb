@@ -1,4 +1,6 @@
 Avatari::Application.routes.draw do
+  resources :avatars
+
   get "dashboard/index"
 
   post "lti/connect"
@@ -14,6 +16,7 @@ Avatari::Application.routes.draw do
   resources :target_areas
 
   resources :items
+  root :to => 'items#new'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

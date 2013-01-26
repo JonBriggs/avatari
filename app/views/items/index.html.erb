@@ -4,10 +4,8 @@
   <tr>
     <th>Name</th>
     <th>Target area</th>
-    <th>Gender</th>
+    <th>Avatar</th>
     <th>Value</th>
-    <th>Image url</th>
-    <th>Minecraft image url</th>
     <th>Description</th>
     <th></th>
     <th></th>
@@ -17,15 +15,14 @@
 <% @items.each do |item| %>
   <tr>
     <td><%= item.name %></td>
-    <td><%= item.target_area_id %></td>
-    <td><%= item.gender %></td>
+    <td><%= item.target_area.try(:name) %></td>
+    <td><%= item.avatar.try(:name) %></td>
     <td><%= item.value %></td>
-    <td><%= item.image_url %></td>
-    <td><%= item.minecraft_image_url %></td>
     <td><%= item.description %></td>
     <td><%= link_to 'Show', item %></td>
     <td><%= link_to 'Edit', edit_item_path(item) %></td>
-    <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%-# link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } 
+         %></td>
   </tr>
 <% end %>
 </table>

@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
 
 <p>
   <b>Name:</b>
@@ -11,8 +13,8 @@
 </p>
 
 <p>
-  <b>Gender:</b>
-  <%= @item.gender %>
+  <b>Avatar:</b>
+  <%= @item.avatar.try(:name) %>
 </p>
 
 <p>
@@ -20,7 +22,7 @@
   <%= @item.value %>
 </p>
 
-<p>
+<!--p>
   <b>Image url:</b>
   <%= @item.image_url %>
 </p>
@@ -28,13 +30,14 @@
 <p>
   <b>Minecraft image url:</b>
   <%= @item.minecraft_image_url %>
-</p>
+</p-->
 
 <p>
   <b>Description:</b>
   <%= @item.description %>
 </p>
 <svg>
+  <%= render @item.avatar if @item.avatar%>
   <%= render @item %>
 </svg>
 

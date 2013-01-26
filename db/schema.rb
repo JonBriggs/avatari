@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130109081305) do
+ActiveRecord::Schema.define(:version => 20130125071612) do
+
+  create_table "avatars", :force => true do |t|
+    t.string   "name"
+    t.string   "gender"
+    t.float    "value"
+    t.text     "svg"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "individuals", :force => true do |t|
     t.string   "firstname"
@@ -28,7 +37,6 @@ ActiveRecord::Schema.define(:version => 20130109081305) do
   create_table "items", :force => true do |t|
     t.string   "name"
     t.integer  "target_area_id"
-    t.string   "gender"
     t.float    "value"
     t.string   "image_url"
     t.string   "minecraft_image_url"
@@ -36,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20130109081305) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
     t.text     "svg"
+    t.integer  "avatar_id"
   end
 
   create_table "owned_items", :force => true do |t|

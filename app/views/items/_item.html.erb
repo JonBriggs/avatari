@@ -1,3 +1,3 @@
-<g id="g_<%=item.target_area.name.downcase%>">
+<g id="g_<%=(item.target_area ? item.target_area.name.downcase : "temp")%>">
   <%=raw(item.svg)%>
 </g>
