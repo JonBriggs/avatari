@@ -1,4 +1,7 @@
 Avatari::Application.routes.draw do
+  get "session/login"
+  post "session/auth"
+  
   resources :avatars
 
   get "dashboard/index"
@@ -8,7 +11,9 @@ Avatari::Application.routes.draw do
   get "lti/dashboard"
 
   get "lti/tool_config"
-
+  match 'shop(/index)' => 'shop#index'
+  get "shop/chest"
+  post "shop/open_chest"
   resources :owned_items
 
   resources :individuals

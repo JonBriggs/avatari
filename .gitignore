@@ -14,3 +14,6 @@
 /log/*.log
 /tmp
 /config/database.yml
+
+# Ignore redcar directory
+/._redcar

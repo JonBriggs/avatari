@@ -3,6 +3,6 @@ class ApplicationController < ActionController::Base
 
   private
   def current_user
-    @current_user ||= Individual.find(session["current_user_id"])
+    @current_user ||= Individual.find(session[:individual_id])
   end
 end
