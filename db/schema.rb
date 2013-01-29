@@ -11,15 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130125071612) do
+ActiveRecord::Schema.define(:version => 20130129000542) do
+
+  create_table "accounts", :force => true do |t|
+    t.integer  "individual_id"
+    t.string   "lms_instance"
+    t.integer  "canvas_course_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
 
   create_table "avatars", :force => true do |t|
     t.string   "name"
     t.string   "gender"
     t.float    "value"
-    t.text     "svg"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.text     "svg",        :limit => 16777215
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "individuals", :force => true do |t|
@@ -32,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130125071612) do
     t.integer  "gradyear"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "avatar_id"
   end
 
   create_table "items", :force => true do |t|
@@ -41,10 +50,19 @@ ActiveRecord::Schema.define(:version => 20130125071612) do
     t.string   "image_url"
     t.string   "minecraft_image_url"
     t.text     "description"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.text     "svg"
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
+    t.text     "svg",                 :limit => 16777215
     t.integer  "avatar_id"
+  end
+
+  create_table "logs", :force => true do |t|
+    t.string   "controller"
+    t.string   "action"
+    t.integer  "individual_id"
+    t.text     "stats"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "owned_items", :force => true do |t|
@@ -62,6 +80,16 @@ ActiveRecord::Schema.define(:version => 20130125071612) do
     t.text     "description"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "transactions", :force => true do |t|
+    t.integer  "account_id"
+    t.float    "add_funds"
+    t.float    "remove_funds"
+    t.text     "notes"
+    t.text     "stats"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
 end

@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Individual:</b>
+  <%= @account.individual_id %>
+</p>
+
+<p>
+  <b>Lms instance:</b>
+  <%= @account.lms_instance %>
+</p>
+
+<p>
+  <b>Canvas course:</b>
+  <%= @account.canvas_course_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_account_path(@account) %> |
+<%= link_to 'Back', accounts_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  account_id: 1
+  add_funds: 1.5
+  remove_funds: 1.5
+  notes: MyText
+  stats: MyText
+
+two:
+  account_id: 1
+  add_funds: 1.5
+  remove_funds: 1.5
+  notes: MyText
+  stats: MyText

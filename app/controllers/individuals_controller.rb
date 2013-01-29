@@ -3,7 +3,6 @@ class IndividualsController < ApplicationController
   # GET /individuals.json
   def index
     @individuals = Individual.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @individuals }
@@ -14,7 +13,12 @@ class IndividualsController < ApplicationController
   # GET /individuals/1.json
   def show
     @individual = Individual.find(params[:id])
-
+    unless @individual.account
+      @account = @individual.create_account
+    else
+      @account = @individual.account
+    end
+      
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @individual }

@@ -1,5 +1,11 @@
 <h1>Welcome <%= @customer.firstname %></h1>
-
+<h2>Open a Chest</h2>
+<ul>
+<% [10,20,30,40,50].each do |val|%>
+<li><%= link_to "$#{val} Chest", :action=> :chest, :value => val %>
+</li>
+<% end %>
+</ul>
 <h2>Possible Items</h2>
   <% @target_areas.each do |ta| %>
   <h2><%=ta.name%> - <%=ta.items.size%> </h2>

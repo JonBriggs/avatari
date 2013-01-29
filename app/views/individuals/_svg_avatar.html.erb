@@ -16,6 +16,7 @@
        id="clipPath2999"><path
          d="M 0,792 612,792 612,0 0,0 0,792 z"
          id="path3001" /></clipPath></defs>
+  <%= render @individual.avatar if @individual.avatar %>
   <% @individual.worn_items.each do |witem| %>
     <%= render witem.item %>
   <% end %>

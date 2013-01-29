@@ -66,7 +66,7 @@ class LtiController < ApplicationController
         message += " found individual " + @individual.firstname
       end
     end
-    session["current_user_id"] = @individual.id
+    session["individual_id"] = @individual.id
     if @individual
       redirect_to :controller => "dashboard", :action => "index"
     else
@@ -92,7 +92,7 @@ class LtiController < ApplicationController
     tc.set_ext_params("canvas.instructure.com", 
                          {"privacy_level" => "public", 
                           "tool_id" => "avatari",
-                          "user_navigation" => {
+                          "course_navigation" => {
                              "url" => "http://four11.eastsideprep.org:3000/lti/connect", "text" => "Avatari"}
                               
                          })

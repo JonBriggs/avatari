@@ -1,8 +1,12 @@
-<h1>Welcome <%= @customer.firstname %></h1>
+<h1>Welcome <%= @customer.firstname %> - Current Balance: $<%= @customer.account.balance %></h1>
+<h2><%= link_to "Back to the Shop", "/shop" %></h2>
 <%= form_tag('/shop/open_chest') do %>
 <input type='hidden' name='value' value='<%= params[:value] %>' />
-<input type='submit' name='open_chest' value="Open This Chest" />
-
+<% if @customer.account.balance >= params[:value].to_f %>
+  <input type='submit' name='open_chest' value="Open This Chest" />
+<% else %>
+  Insufficient Funds to Open This Chest
+<% end %>
 <% end %>
 <h2>Possible Items for this <%= params[:value] %> rune chest</h2>
   <ul>

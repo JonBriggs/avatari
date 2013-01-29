@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  individual_id: 1
+  lms_instance: MyString
+  canvas_course_id: 1
+
+two:
+  individual_id: 1
+  lms_instance: MyString
+  canvas_course_id: 1

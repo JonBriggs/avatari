@@ -9,7 +9,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id='nav'>
+  <%= link_to "Home", @current_user %>
+</div>
 <%= yield %>
 
 </body>

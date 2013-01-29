@@ -1,4 +1,8 @@
 Avatari::Application.routes.draw do
+  resources :transactions
+
+  resources :accounts
+
   get "session/login"
   post "session/auth"
   

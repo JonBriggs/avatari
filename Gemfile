@@ -10,6 +10,12 @@ gem 'mysql2'
 #GEMS ADDED TO MAKE AVATARI WORK
 gem 'ims-lti'
 
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  
+end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
