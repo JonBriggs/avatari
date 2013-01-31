@@ -74,8 +74,10 @@ class LtiController < ApplicationController
       end
     end
     session["current_user_id"] = @individual.id
-    if @individual
-      redirect_to @individual #:controller => "dashboard", :action => "index"
+    if @individual.avatar
+      redirect_to :controller => "dashboard", :action => "index"
+    elsif
+      redirect_to :controller => "dashboard",  :action => "initialize_avatar"
     else
       render :text => message + "<br />" + @tool_provider.inspect  + "<br />" +  params.inspect
     end

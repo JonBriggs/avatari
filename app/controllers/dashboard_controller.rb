@@ -2,7 +2,7 @@ class DashboardController < ApplicationController
   def index
     @individual = current_user
     unless @individual.avatar
-      redirect_to :initialize_avatar
+      redirect_to :action => "initialize_avatar"
     end
   end
   

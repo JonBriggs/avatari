@@ -1,8 +1,10 @@
 <% avatari_svg do %>
   <%= render @individual.avatar if @individual.avatar %>
+  <%= " " %>
   <% @individual.worn_items.each do |witem| %>
     <%= render witem %>
   <% end %>
+  
 <% end %>
 
 <script>

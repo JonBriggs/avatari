@@ -3,7 +3,7 @@
 <%=form_for @individual do |f| %>
   <ul>
   <% @avatars.each do |avatar|%>
-  <li><%= f.radio_button :avatar_id, avatar %><%= avatari_svg {render avatar }%><%=avatar.name%></li>
+  <li><%= f.radio_button :avatar_id, avatar.id %><% avatari_svg {render avatar }%><%=avatar.name%></li>
   <% end %>
   </ul>
   <%= f.submit "Avatar Me!"%>

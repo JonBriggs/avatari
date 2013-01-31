@@ -1,5 +1,5 @@
 <div id='stats'>
-  <h2>Account Balance: $<%= @individual.account.balance %></h2>
+  <h2>Account Balance: <%= number_to_currency(@individual.account.balance) %></h2>
   <h3>Wardrobe Size: <%= @individual.owned_items.size %></h3>
-  <h3>Wardrobe Value: $<%= @individual.owned_items.collect {|oitem| oitem.item.value.to_f}.sum %></h3>
+  <h3>Wardrobe Value: <%= number_to_currency(@individual.owned_items.collect {|oitem| oitem.item.value.to_f}.sum) %></h3>
 </div>
