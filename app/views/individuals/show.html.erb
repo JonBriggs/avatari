@@ -1,27 +1,24 @@
-<p id="notice"><%= notice %></p>
-<%= link_to "Buy Stuff", '/shop/index' %>
-<h1><%= @individual.firstname + " " + @individual.lastname %></h1>
-<p>
-  <b>Email:</b>
-  <%= @individual.email %>
-</p>
-<p>
-  <b>Account Balance:</b>$<%=@individual.account.balance%>
-</p>
-<p>
-  <b>Type:</b>
-  <%= @individual.type %>
-</p>
+<h1>Wardrobe - <%= @individual.firstname + " " + @individual.lastname %></h1>
 
 <%= render :partial => "svg_avatar", :individual => @individual %>
-
-<%= link_to 'Edit', edit_individual_path(@individual) %> |
-<%= link_to 'Back', individuals_path %>
+<%= render :partial => "stats"%>
+<% link_to 'Edit', edit_individual_path(@individual) %>
+<% link_to 'Back', individuals_path %>
 <h3>Wardrobe</h3>
 <div id='wardrobe'>
 <% @individual.owned_items.joins(:item).order("target_area_id").each do |owned_item| %>
-  <svg width="150px" height="150px" style="border:1px solid gray; display:inline-block" class='<%= owned_item.wearing ? 'wearing' : ''%>'>
-    <%= render owned_item.item %>
-  </svg>
+  <%= link_to(edit_owned_item_path(owned_item)) do %>
+    <% avatari_svg(:class => owned_item.wearing ? 'wearing' : '') do %>
+      <%= render owned_item %>
+    <% end %>
+  <% end %>
 <% end %>
 </div>
+<script>
+  <%@individual.owned_items.each do |worn_item|%>
+    <% if worn_item.color? %>
+      <%color_code, action, color = worn_item.color.split(":")%>
+      d3.selectAll("#g_owned_item_<%=worn_item.id%> path.<%=color_code%>").transition().duration(2000).style("<%=action%>", "<%=color%>");
+    <%end%>
+  <%end%>
+</script>

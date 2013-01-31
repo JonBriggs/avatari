@@ -1,0 +1,25 @@
+<%= form_for(@owned_item) do |f| %>
+  <% if @owned_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@owned_item.errors.count, "error") %> prohibited this owned_item from being saved:</h2>
+
+      <ul>
+      <% @owned_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class='checkbox'>
+    <%= f.label :wearing %>
+    <%= f.check_box :wearing %>
+  </div>
+  <div class="field">
+    <%= f.label :color %>
+    <%= f.text_field :color %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

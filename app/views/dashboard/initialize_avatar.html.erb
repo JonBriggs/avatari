@@ -1,0 +1,10 @@
+<h1>Hi <%=@individual.fullname%></h2>
+  <p>It appears that you do not have an avatari avatar set yet. Please choose one of the following avatars.</p>
+<%=form_for @individual do |f| %>
+  <ul>
+  <% @avatars.each do |avatar|%>
+  <li><%= f.radio_button :avatar_id, avatar %><%= avatari_svg {render avatar }%><%=avatar.name%></li>
+  <% end %>
+  </ul>
+  <%= f.submit "Avatar Me!"%>
+<% end %>

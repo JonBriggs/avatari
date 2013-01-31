@@ -36,10 +36,10 @@
   <b>Description:</b>
   <%= @item.description %>
 </p>
-<svg>
+<% avatari_svg do %>
   <%= render @item.avatar if @item.avatar%>
   <%= render @item %>
-</svg>
+<% end %>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

@@ -9,6 +9,8 @@ Avatari::Application.routes.draw do
   resources :avatars
 
   get "dashboard/index"
+  get "dashboard/initialize_avatar"
+  post "dashboard/set_avatar"
 
   post "lti/connect"
 
@@ -19,7 +21,8 @@ Avatari::Application.routes.draw do
   get "shop/chest"
   post "shop/open_chest"
   resources :owned_items
-
+  post "owned_items/sellback"
+  
   resources :individuals
 
   resources :target_areas
