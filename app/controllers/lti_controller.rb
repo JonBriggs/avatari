@@ -66,9 +66,9 @@ class LtiController < ApplicationController
         message += " found individual " + @individual.firstname
       end
     end
-    session["individual_id"] = @individual.id
+    session["current_user_id"] = @individual.id
     if @individual
-      redirect_to :controller => "dashboard", :action => "index"
+      redirect_to @individual #:controller => "dashboard", :action => "index"
     else
       render :text => message + "<br />" + @tool_provider.inspect  + "<br />" +  params.inspect
     end
