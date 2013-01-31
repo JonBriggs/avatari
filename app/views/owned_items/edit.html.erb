@@ -1,6 +1,17 @@
 <h1>Editing owned_item</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @owned_item %> |
-<%= link_to 'Back', owned_items_path %>
+<%= render 'simple_form' %>
+<% avatari_svg(:class => @owned_item.wearing ? 'wearing' : '') do %>
+  <%= render @owned_item.item %>
+<% end %>
+<h2>This item can be sold back to the store for $<%=@owned_item.item.resale_value%></h2>
+<%= form_tag("/owned_items/sellback") do %>
+  <%= hidden_field_tag "owned_item_id", @owned_item.id %>
+  <%=submit_tag "Sell this back to the store"%>
+<% end %>
+<script>
+    <% if @owned_item.color? %>
+      <%color_code, action, color = @owned_item.color.split(":")%>
+      d3.selectAll("#g_<%=@owned_item.item.target_area.name.downcase%> path.<%=color_code%>").transition().duration(2000).style("<%=action%>", "<%=color%>");
+    <%end%>
+</script>

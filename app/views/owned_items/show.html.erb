@@ -14,9 +14,9 @@
   <b>Stats:</b>
   <%= @owned_item.stats %>
 </p>
-<svg height='150' width = '150'>
+<% avatari_svg do %>
   <%= render @owned_item.item %>
-</svg>
+<% end %>
 
 <%= link_to 'Edit', edit_owned_item_path(@owned_item) %> |
 <%= link_to 'Back', owned_items_path %>

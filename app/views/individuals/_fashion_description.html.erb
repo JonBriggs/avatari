@@ -1,0 +1,6 @@
+<div id='fashion_description'>
+<h2><%=@individual.firstname%> is wearing...</h2>
+<%@individual.owned_items.where("wearing = 1").each do |witem| %>
+  <p><strong><%=witem.item.name%>:</strong><%=witem.item.description%></p>
+<%end%>
+</div>

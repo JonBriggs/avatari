@@ -1,3 +1,53 @@
 // Place all the styles related to the Dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#container {
+ background-color:black;
+ padding-left:15px;
+ margin:5px;
+ color:white;
+ border-radius:5px;
+ min-height:400px;
+ width:800px;
+ display:inline-block;
+}
+h1 {
+  font-family: 'VT323', Arial, sans-serif;
+  font-size:3em;
+  color:white;
+  padding-top:10px;
+}
+#nav {
+  display:inline-block;
+  ul {
+    border-radius:5px;
+    border:5px solid black;
+    width:805px;  
+    padding:0px;
+    margin-left:5px;
+    background-color:blue;
+    li {
+      display:inline-block;
+      margin-left:20px;
+      background-color:blue;
+      padding:5px;    
+      a {
+        text-decoration:none; 
+        color:yellow;
+        font-weight:bold;
+        padding:5px;
+        margin:2px;
+        &:hover {
+          color:blue;
+          font-weight:bold;
+          background-color:yellow;
+        }
+      }
+    }
+  }
+}
+
+div#stats{
+  display: inline-block;
+  vertical-align: top;
+}

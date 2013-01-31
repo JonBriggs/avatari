@@ -12,6 +12,7 @@ class IndividualsController < ApplicationController
   # GET /individuals/1
   # GET /individuals/1.json
   def show
+    @current_user = current_user
     @individual = Individual.find(params[:id])
     unless @individual.account
       @account = @individual.create_account

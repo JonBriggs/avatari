@@ -3,4 +3,8 @@ class Item < ActiveRecord::Base
   belongs_to :avatar
   belongs_to :target_area
   has_many :owned_items
+  
+  def resale_value
+    value * 0.6
+  end
 end

@@ -62,6 +62,8 @@ class LtiController < ApplicationController
                           :sisid => params["lis_person_sourcedid"],
                           :email => params["lis_person_contact_email_primary"])  #also type, gradyear
         message += " Created a new individual " 
+        @individual.create_account
+        message += "and account "
       else
         message += " found individual " + @individual.firstname
       end

@@ -3,16 +3,20 @@
 <head>
   <title>Avatari</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=VT323'%>
   <%= javascript_include_tag "application" %>
     <script type="text/javascript" src="http://mbostock.github.com/d3/talk/20111018/d3/d3.js"></script>
 
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id='notice'><p><%= notice %></p></div>
 <div id='nav'>
-  <%= link_to "Home", @current_user %>
+  <%= nav_links %>
 </div>
-<%= yield %>
+<div id='container'>
+  <%= yield %>
+</div>
 
 </body>
 </html>
