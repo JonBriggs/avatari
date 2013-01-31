@@ -24,13 +24,19 @@ module ApplicationHelper
   end
   
   def nav_links
+    begin
+      id = @current_user.id
+      link_string = link_to("Wardrobe", :controller => "individuals", :action => "show", :id => (@current_user ? @current_user.id : ""))
+    rescue
+      link_string = "-"
+    end
+
     content_tag(:ul) do 
       content_tag(:li,
         link_to("Home", :controller => "dashboard", :action => "index")) + 
       content_tag(:li,
         link_to("Shop", :controller => "shop", :action => "index")) + 
-      content_tag(:li,
-        link_to("Wardrobe", :controller => "individuals", :action => "show", :id => @current_user.id))
+      content_tag(:li,link_string)
     end
   end
 end

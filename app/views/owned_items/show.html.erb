@@ -1,22 +1,16 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Individual:</b>
-  <%= @owned_item.individual.firstname %> <%= @owned_item.individual.lastname %>
-</p>
+<h1>The Chest Opens to Reveal</h1>
 
 <p>
   <b>Item:</b>
   <%= @owned_item.item.target_area.name %> - <%= @owned_item.item.name %>
 </p>
-
 <p>
-  <b>Stats:</b>
-  <%= @owned_item.stats %>
+<%= @owned_item.item.description %>
 </p>
-<% avatari_svg do %>
-  <%= render @owned_item.item %>
+<%= link_to edit_owned_item_path(@owned_item) do %>
+  <% avatari_svg do %>
+    <%= render @owned_item.item %>
+  <% end %>
 <% end %>
 
-<%= link_to 'Edit', edit_owned_item_path(@owned_item) %> |
-<%= link_to 'Back', owned_items_path %>

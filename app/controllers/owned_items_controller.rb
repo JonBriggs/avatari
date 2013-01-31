@@ -13,6 +13,7 @@ class OwnedItemsController < ApplicationController
   # GET /owned_items/1
   # GET /owned_items/1.json
   def show
+    @current_user = current_user
     @owned_item = OwnedItem.find(params[:id])
 
     respond_to do |format|

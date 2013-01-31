@@ -41,6 +41,6 @@ class ShopController < ApplicationController
   
   private
   def possible_items_in_chest(value)
-    Item.where("value >= ?", value - value / 2).where("value <= ?", value + value / 2)
+    Item.where("value >= ?", value - value / 2).where("value <= ?", value + value / 2).where("avatar_id = ?",current_user.avatar.id)
   end
 end

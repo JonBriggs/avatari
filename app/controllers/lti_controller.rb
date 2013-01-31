@@ -63,7 +63,12 @@ class LtiController < ApplicationController
                           :email => params["lis_person_contact_email_primary"])  #also type, gradyear
         message += " Created a new individual " 
         @individual.create_account
-        message += "and account "
+        message += "and account with $50"
+        trans = Transaction.new
+        trans.account = @individual.account
+        trans.add_funds = 50
+        trans.notes = "Initial $50 deposit"
+        trans.save
       else
         message += " found individual " + @individual.firstname
       end
