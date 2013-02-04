@@ -1,4 +1,4 @@
-<h1>Welcome <%= @customer.firstname %> - Current Balance: $<%= @customer.account.balance %></h1>
+<h1>Welcome <%= @customer.firstname %> - Current Balance: <%= number_to_currency(@customer.account.balance) %></h1>
 <h2><%= link_to "Back to the Shop", "/shop" %></h2>
 <%= form_tag('/shop/open_chest') do %>
 <input type='hidden' name='value' value='<%= params[:value] %>' />

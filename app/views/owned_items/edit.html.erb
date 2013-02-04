@@ -4,7 +4,7 @@
 <% avatari_svg(:class => @owned_item.wearing ? 'wearing' : '') do %>
   <%= render @owned_item.item %>
 <% end %>
-<h2>This item can be sold back to the store for $<%=@owned_item.item.resale_value%></h2>
+<h2>This item can be sold back to the store for <%=number_to_currency(@owned_item.item.resale_value)%></h2>
 <%= form_tag("/owned_items/sellback") do %>
   <%= hidden_field_tag "owned_item_id", @owned_item.id %>
   <%=submit_tag "Sell this back to the store"%>
